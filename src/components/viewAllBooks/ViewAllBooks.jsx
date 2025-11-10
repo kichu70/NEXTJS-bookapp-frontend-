@@ -2,10 +2,17 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Button, Card, CardContent, CardMedia, Rating, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Rating,
+  Typography,
+} from "@mui/material";
 import Carousel from "react-material-ui-carousel";
-import "./ViewAllBook.css"
-import "./Responsive.css"
+import "./ViewAllBook.css";
+import "./Responsive.css";
 const ViewAllBooks = () => {
   const [books, setBooks] = useState([]);
 
@@ -18,6 +25,7 @@ const ViewAllBooks = () => {
           ...rest,
         }));
         setBooks(idReplace);
+        console.log(idReplace);
       } catch (err) {
         console.log(err, "Error fetching books");
       }
@@ -35,10 +43,35 @@ const ViewAllBooks = () => {
               <Card className="Card">
                 <h4 className="bookname">{book.bookname}</h4>
 
+                <Carousel
+                  autoPlay={true}
+                  interval={3000}
+                  navButtonsAlwaysVisible={false}
+                  indicators={false}
+                >
+                  {(Array.isArray(book.image) ? book.image : [book.image])?.map(
+                    (img, index) => (
+                      <CardMedia
+                        key={img}
+                        className="CardMedia"
+                        sx={{ width: "100%", objectFit: "contain" }}
+                        height="240px"
+                        image={`http://localhost:5000/${img}`}
+                        component="img"
+                        title={`${book.bookname} - ${index + 1}`}
+                        onClick={() => naviagte(`/single-book/${book.id}`)}
+                      />
+                    )
+                  )}
+                </Carousel>
+
                 <CardContent>
                   <h3 className="price">₹ {book.price}</h3>
 
-                  <Typography className="author" sx={{ color: "text.secondary" }}>
+                  <Typography
+                    className="author"
+                    sx={{ color: "text.secondary" }}
+                  >
                     {book.author}
                   </Typography>
 
@@ -50,6 +83,14 @@ const ViewAllBooks = () => {
                     {book.description}
                   </Typography>
                 </CardContent>
+                <Button
+                  className="dltbtn"
+                  variant="contained"
+                  size="small"
+                  // onClick={""}
+                >
+                  delete
+                </Button>
               </Card>
             </div>
           ))}

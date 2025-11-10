@@ -31,16 +31,13 @@
   display: flex;
   max-width: 60%;
   margin: 50px auto;
-  font-size: 3.9vw;
   text-align: center;
   font-weight: 900;
   font-family:cursive2 ;
-    background: linear-gradient(to right,#c521a7, #a1a12d, #766a38, #3c0b3c, #dcd50c) border-box;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  text-shadow: #907795 0 0 px ;
+}
+.headPera .text-content{
+  
+  font-size: 3.3vw;
 }
  h1:hover{
   transform: scale(0.9999);
@@ -52,7 +49,7 @@
   display: grid;
   grid-template-columns: repeat(2,1fr);
   justify-content: center;
-  gap: 50px;
+  gap: 20px;
   position: relative;
 }
 .BookType h4{
@@ -74,6 +71,7 @@
 #new ,#old{
   box-shadow: #440940  0 0 50px;
   border-radius: 3vw;
+  width: 500px;
   position: relative;
   opacity: 100%;
   
