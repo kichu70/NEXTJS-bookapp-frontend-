@@ -1,0 +1,48 @@
+
+.headOne{
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: cursive;
+    text-align: center;
+    color:rgb(119, 0, 255) ;
+}
+.navbar{
+    width: 100%;
+    height: 100%;
+    min-height: 13vh;
+    padding: 20px;
+    background: linear-gradient(rgb(24, 1, 24)0%,rgba(176, 24, 143, 0.932)0%,rgb(0,0,0,0)100%);
+    margin: 0;
+}
+.navSection1{
+    display: flex;
+    justify-content: space-evenly;
+}
+.navSection1 button{
+    background: none;
+    border: none !important;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    color: white;
+    padding: 10px;
+    margin: 20PX 0 0 0;
+    border-bottom: 5px solid rgba(107, 11, 77, 0) !important;
+    
+}
+
+.navSection1 button:hover{
+    box-shadow: none;
+    color: rgb(36, 8, 34);
+    border-bottom: 5px solid rgb(14, 1, 12) !important;
+    /* border-radius: 10PX; */
+    transition: 0.5s;
+    transform: scale(1.1);
+    font-family: cursive;
+    text-shadow: 0 0 10px rgb(197, 113, 184);
+}
+
+

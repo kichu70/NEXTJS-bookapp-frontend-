@@ -1,0 +1,52 @@
+.grids {
+  display: grid;
+  row-gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 150px auto 0;
+  gap: 15px;
+  max-width: 1250px;
+  padding: 20px;
+}
+.Card {
+  max-width: 100% !important;
+  height: 550px !important;
+  overflow: hidden;
+  margin: 15px auto;
+  padding: 20px;
+  border-radius: 20px !important;
+  box-shadow: rgb(181, 172, 118) 0 0 10px !important;
+}
+.price {
+  margin: 0 0 20px;
+}
+.bookname {
+  text-transform: capitalize;
+  margin-left: 10px;
+  font-family: cursive;
+  font-size: 18px;
+  white-space: nowrap;
+    -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+.discription {
+  max-width: 300px;
+    display: -webkit-box;
+    
+  -webkit-line-clamp: 2; /* Show only 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Card:hover {
+  box-shadow: rgb(181, 172, 118) 0 0 20px !important;
+  transition: 0.3s;
+  transform: scale(1.05);
+}
+
+.price {
+  color: green;
+}
+

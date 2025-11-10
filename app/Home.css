@@ -1,0 +1,114 @@
+@font-face {
+  font-family: cursive2;
+  src: url("../src/fonts/PlaywriteDESAS-Regular.ttf");
+}
+.headImage {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  /* mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-repeat: no-repeat;
+  mask-size: cover; */
+
+  position: fixed;
+  top:0 ;
+  z-index: -2;
+  padding: 0;
+  margin: 0;
+}
+.imageHead {
+  position: relative;
+}
+.headImage.fixed {
+  position: fixed;
+  top: 0;
+}
+.headPera {
+  display: flex;
+  max-width: 60%;
+  margin: 50px auto;
+  font-size: 3.9vw;
+  text-align: center;
+  font-weight: 900;
+  font-family:cursive2 ;
+    background: linear-gradient(to right,#c521a7, #a1a12d, #766a38, #3c0b3c, #dcd50c) border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: #907795 0 0 px ;
+}
+ h1:hover{
+  transform: scale(0.9999);
+}
+.BookType{
+  max-width: 1250px;
+  padding: 20px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: center;
+  gap: 50px;
+  position: relative;
+}
+.BookType h4{
+  position: absolute;
+  font-size: 5vw;
+  font-family: cursive2;
+  color: white ;
+  text-shadow: 0 0 20px;
+}
+.BookType h4:hover{
+    transform: scale(1.02);
+}
+.new,.old{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 50px;
+}
+#new ,#old{
+  box-shadow: #440940  0 0 50px;
+  border-radius: 3vw;
+  position: relative;
+  opacity: 100%;
+  
+}
+#old{
+  top: -50px;
+}
+#new{
+  top: 50px;
+}
+#new:hover ,#old:hover{
+  transform: scale(1.02);
+}
+.home{
+  position: relative;
+  z-index: 1;
+    background: linear-gradient(#dc0ca8ff,#dc0ca8ff,#dc0ca8ff,rgb(220, 153, 203),rgb(220, 153, 203));
+}
+
+.bgSilk{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -10;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+.bgSilk::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; 
+  background: linear-gradient(to top, #dc0ca8ff, transparent);
+  pointer-events: none; 
+}
