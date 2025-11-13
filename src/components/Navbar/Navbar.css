@@ -14,6 +14,14 @@
     background: linear-gradient(rgb(24, 1, 24)0%,rgba(176, 24, 143, 0.932)0%,rgb(0,0,0,0)100%);
     margin: 0;
 }
+.navbar h1{
+    text-align: center;
+    font-size: 5vh;
+    font-weight: 00;
+    color: rgb(247, 235, 150);
+    font-family: fantasy;
+    letter-spacing: 2px;
+}
 .navSection1{
     display: flex;
     justify-content: space-evenly;

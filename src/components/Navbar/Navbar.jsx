@@ -26,11 +26,13 @@ const Navbar = () => {
         >   
           Book App
         </GradientText>
+        {/* <h1 className="navHead" >Book app</h1> */}
         <div className="navSection1" ref={navRef}>
           <Link href={"/"}><button variant="contained">home</button></Link>
-          <Link href={"/ViewBook"}><button variant="contained">All book</button></Link>
-          <Link href={"/"}><button variant="contained">home</button></Link>
-          <Link href={"/"}><button variant="contained">home</button></Link>
+          <Link href={"/view-book"}><button variant="contained">All book</button></Link>
+          <Link href={"/add-book"}><button variant="contained">addbook</button></Link>
+          <Link href={"/add-cart"}><button variant="contained">cart</button></Link>
+          <Link href={"/login"}><button variant="contained">login</button></Link>
         </div>
       </div>
     </div>

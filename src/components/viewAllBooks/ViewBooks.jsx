@@ -60,7 +60,7 @@ const ViewAllBooks = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_FETCH_DATA_URL}/Books/?page=${page}&limit=9`);
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_FETCH_DATA_URL}/Books/?page=${page}&limit=8`);
         const idReplace = res.data.data.map(({ _id, ...rest }) => ({
           id: _id,
           ...rest,
@@ -220,31 +220,6 @@ const ViewAllBooks = () => {
             }}
           />
         )}
-      </div>
-
-
-
-
-      <div className="pagination">
-        <button
-        className="pages"
-          onClick={() => setPage((p) => Math.max(p - 1, 1))}
-          disabled={page === 1}
-        >
-          Prev
-        </button>
-
-        <span style={{ margin: "0 10px" }}>
-          {page} / {totalPage}
-        </span>
-
-        <button
-        className="pages"
-          onClick={() => setPage((p) => Math.min(p + 1, totalPage))}
-          disabled={page === totalPage}
-        >
-          Next
-        </button>
       </div>
     </div>
   );

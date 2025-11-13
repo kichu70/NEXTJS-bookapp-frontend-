@@ -1,14 +1,15 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import "./Home.css";
+import "./style/Home.css";
 import Silk from "../components/Silk";
 import Navbar from "../src/components/Navbar/Navbar";
 import headImage from "../public/homeImages/headImg1.jpg";
 import oldbook from "../public/homeImages/oldbook.png";
 import newbook from "../public/homeImages/newBook.png";
-import ViewAllBooks from "../src/components/viewAllBooks/ViewAllBooks";
+import ViewBooks from "../src/components/viewAllBooks/ViewBooks";
 import GradientText from "@/src/components/ui/GradientText";
+import LightRays from "../components/LightRays"
 const page = () => {
   
   //   const [fixed, setFixed] = useState(false);
@@ -32,7 +33,9 @@ const page = () => {
           noiseIntensity={1.5}
           rotation={0}
         />
-        
+        <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+
+</div>
       </div>
       <div className="imageHead">
         {/* <Image
@@ -62,14 +65,12 @@ const page = () => {
       <div className="BookType">
         <div className="old">
           <Image id="old" src={oldbook} alt="" />
-          <h4>old Book</h4>
         </div>
         <div className="new">
           <Image id="new" src={newbook} alt="" />
-          <h4>old Book</h4>
         </div>
       </div>
-      <ViewAllBooks />
+      <ViewBooks />
     </div>
   );
 };

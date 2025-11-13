@@ -17,6 +17,9 @@
   background: rgb(236, 216, 235) !important;
   box-shadow: rgb(181, 172, 118) 0 0 10px !important;
 }
+.CardMedia{
+  height: 280px;
+}
 .price {
   margin: 0 0 20px;
 }
@@ -51,6 +54,13 @@
   color: green;
 }
 
+.btns {
+  display: flex !important;
+  justify-content: space-evenly;
+  margin: 20px auto !important;
+  width: 100%;
+  gap: 10px;
+}
 .dltbtn {
   width: 100%;
   color: rgb(240, 230, 230) !important;
@@ -65,3 +75,51 @@
   background-color: rgb(204, 96, 24) !important;
   box-shadow: red 0 0 10px !important;
 }
+.editbtn {
+  width: 100%;
+  font-family: cursive !important;
+  box-shadow: rgb(151, 133, 111) 0 0 10px !important ;
+}
+
+.buybtn {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+.buynow {
+  color: rgb(223, 221, 221) !important;
+  font-weight: 300 !important;
+  background-color: rgb(105, 171, 105) !important;
+}
+.add-to-cart {
+  background-color: rgb(129, 123, 120) !important;
+  color: rgb(223, 221, 221) !important;
+  font-weight: 300 !important;
+}
+
+.pages {
+  font-size: 16px !important;
+  color: rgb(131, 121, 110);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: none;
+  background: none;
+  border-bottom: 2px solid rgb(151, 107, 10);
+  border-radius: 5px;
+}
+.pagination {
+  max-width: fit-content;
+  margin:  auto;
+  padding: 50px;
+}
+.pagination span {
+  font-family: cursive;
+  color: rgb(71, 63, 52);
+}
+.pages:hover {
+  border-bottom: 2px solid rgb(242, 60, 19);
+  transform: scale(1.1);
+  color: rgb(223, 194, 25);
+  transition: 0.3s;
+}
+/* ------------------------- */
+

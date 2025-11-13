@@ -1,0 +1,171 @@
+.AddBook{
+    height: fit-content;
+    min-height: 130vh;
+    width: 100%;
+    background-image: url("../../public/addbookimg/addbook-bg.jpg");
+    background-size: cover;
+    background-position: center ;
+    background-repeat: no-repeat;
+    padding-bottom: 10px;
+
+}
+.add-main{
+    max-width: fit-content;
+    margin: auto;
+}
+.addbook-head{
+    background: rgba(255, 197, 252, 0.715);
+    max-width: 1050px;
+    margin: 50px ;
+    padding: 50px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: -5px 10px  15px rgb(173, 100, 175);
+    border-radius: 20px;
+
+}
+.addbook-content{
+    display: grid;
+    margin: 20px;
+    padding: 50px;
+    gap: 50px;
+    grid-template-columns: repeat(2,1fr);
+}
+.addbook-grid1,.addbook-grid2{
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.addbook-content label{
+    color: rgb(107, 56, 31) !important;
+    font-size: 22px;
+}
+.addbook-content input{
+    color: rgb(171, 92, 32) !important;
+    font-family: cursive;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.addbook-head h1{
+    font-size: 50px;
+    text-transform: capitalize;
+    font-family: cursive;
+    color: brown;
+    text-shadow:  -8px 8px 10px rgb(100, 83, 67);
+
+}
+.textEditField .MuiFilledInput-root:after {
+  border-bottom: 2px solid brown;
+}
+.addbook-head Button{
+    background-color: brown !important;
+    width: 85%;
+}
+#category-label{
+    text-align: start;
+}
+#category{
+    height: 50px;
+    background: none;
+    border: none;
+    border-bottom: 2px brown solid;
+    color: rgb(107, 56, 31) ;
+    font-size: 15px;
+    margin: 11px 0 0 0;
+
+}
+.addbook-content input[type="file"] {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  border: 2px solid #9a5440;
+  border-radius: 8px;
+  color: #17252a;
+  cursor: pointer;
+  width: 90%; 
+}
+.addbook-content input[type="file"]::file-selector-button {
+  background-color: #9a5440;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    box-shadow: -5px 5px 10px rgb(100, 83, 67);
+    background-color: rgb(175, 44, 44) !important;
+    color: white;
+    cursor: pointer;
+    width: 20px;
+    height: 40px !important;
+    font-size: 10px;
+    padding: 0;
+}
+
+
+#xBtn{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    font-size: 10px;
+    padding: 0;
+}
+.imagePreview{
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+.imgPrev2{
+     position: relative;
+}
+
+/* -------------------------------------------- */
+@media (max-width: 1401px) {
+    
+}
+
+@media (max-width: 1121px) {
+    .addbook-content{
+        padding: 50px 0px;
+    }
+}
+
+@media (max-width: 993px) {
+    .addbook-head{
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 769px){
+
+}
+
+@media (max-width: 587px)  {
+    .addbook-head{
+        padding:0  0  20px 0;
+        margin:   auto;
+    }
+    .addbook-content{
+        gap: 0px;
+        column-gap: 5px;
+    }
+    .addbook-grid1,.addbook-grid2{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    
+}

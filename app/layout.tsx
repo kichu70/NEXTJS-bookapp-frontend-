@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";
-
+import "./style/globals.css";
+import {AuthProvider} from "../lib/auth"
 export const metadata: Metadata = {
   title: "Book app ",
   description: "Ansifs project",
@@ -14,7 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <AuthProvider>
         {children}
+        </AuthProvider>
       </body>
     </html>
   );
