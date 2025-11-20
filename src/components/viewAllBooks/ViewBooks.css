@@ -96,3 +96,91 @@
   color: rgb(223, 221, 221) !important;
   font-weight: 300 !important;
 }
+
+
+/* ------------------ */
+
+
+@media (max-width: 1401px) {
+    
+}
+
+@media (max-width: 1201px) {
+    
+}
+
+@media (max-width: 1253px) {
+.grids0{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
+@media (max-width: 989px){
+.grids0{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
+@media (max-width: 617px)  {
+
+.grids0{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+}
+
+@media (max-width: 576px) {
+    
+}
+
+
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+
+
+@media (max-width: 1401px) {
+    
+}
+
+@media (max-width: 1201px) {
+    
+}
+
+@media (max-width: 1253px) {
+.grids1{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
+@media (max-width: 989px){
+.grids1{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
+@media (max-width: 617px)  {
+
+.grids1{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+}
+
+@media (max-width: 576px) {
+    
+}
