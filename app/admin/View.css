@@ -1,0 +1,42 @@
+.lines-table {
+  width: 50%;
+  margin:  auto ;
+  border-collapse: collapse;
+}
+
+.lines-table th,
+.lines-table td {
+  border: 2px solid black;
+  padding: 10px;
+  text-align: center;
+}
+.view-head {
+  display: flex;
+  justify-content: space-evenly;
+  margin:  auto 0;
+  padding: 150px 0 0 0;
+  align-items: center;
+}
+
+.view-head h1{
+  font-size: 20px;
+  padding: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.custom-select {
+  background-color: #e4d0e3 !important;
+  border-radius: 10px !important;
+  font-size: 18px !important;
+  padding: 0px !important;
+  height: 50px;
+}
+.head2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnsOfAdmin Button{
+    background-color: rgba(80, 10, 58, 0.956) !important;
+}

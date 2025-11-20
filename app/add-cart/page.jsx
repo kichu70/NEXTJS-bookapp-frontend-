@@ -9,13 +9,12 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-// import "./AddtoCart..css";
 import "./AddtoCart.css";
 import axios from "axios";
 import { useAuth } from "../../lib/auth";
 import { toast } from "react-toastify";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { pink, red } from "@mui/material/colors";
+import {  red } from "@mui/material/colors";
+import { handlePayment } from "../../src/components/payment/paymentButton";
 
 const AddtoCart = () => {
   const { cartItems, removeFromCart } = useAuth();
@@ -85,8 +84,8 @@ const AddtoCart = () => {
             <h1>Books & Price</h1>
             <div className="details">
               <ol type="1">
-                {cartItems.map((book) => (
-                  <li>
+                {cartItems.map((book ,i) => (
+                  <li  key={i}>
                     <div className="list">
                       <div className="detalis-names">
                         <h2 className="name">
@@ -98,7 +97,6 @@ const AddtoCart = () => {
                       <Checkbox
                         checked={selectedBook.includes(book.id)}
                         onChange={() => handleCheckBox(book.id)}
-                        defaultChecked
                         sx={{
                           color: red[800],
                           "&.Mui-checked": {

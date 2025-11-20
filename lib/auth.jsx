@@ -4,43 +4,44 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { setCookie } from "./cookies/setCookie";
+import { clearCookie } from "./cookies/clearCookie";
+import { getCookie } from "./cookies/getCookie";
 
 const AuthContext = createContext();
-export const AuthProvider = ({ children }) => {
-const router = useRouter();
 
-  const safeParse = (key) => {
-    try {
-      const value = localStorage.getItem(key);
-      if (!value || value === "undefined" || value === "null") return null;
-      return JSON.parse(value);
-    } catch (err) {
-      console.log(err, `Error parsing key "${key}"`);
-      return null;
-    }
-  };
-  const [token, setToken] = useState(null);
-  const [user, setUser] = useState(null);
-  const [cartItems, setCartItems] = useState(
-    () => safeParse("cartItems") || []
-  );
+export const AuthProvider = ({ children, cookieData }) => {
+  const router = useRouter();
 
-  useState(() => {
+  const [token, setToken] = useState(cookieData?.token || null);
+  const [user, setUser] = useState(cookieData?.user || null);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {}, [token]);
+
+  useEffect(() => {
     if (typeof window !== "undefined") {
-      const storedToken = localStorage.getItem("token");
-      const storedUser = localStorage.getItem("user");
+      // const storedToken = localStorage.getItem("token");
+      // const storedUser = localStorage.getItem("user");
       const storedCart = localStorage.getItem("cartItems");
 
-      if (storedToken) setToken(storedToken);
-      if (storedUser) setUser(JSON.parse(storedUser));
+      // if (storedToken) setToken(storedToken);
+      // if (storedUser) setUser(JSON.parse(storedUser));
+      if (cookieData) {
+        setToken(cookieData.token);
+        setUser(cookieData.user);
+      }
       if (storedCart) setCartItems(JSON.parse(storedCart));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    if (cartItems.length > 0) {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    } else {
+      localStorage.removeItem("cartItems");
+    }
   }, [cartItems]);
-
   // ----------addcart--------
 
   const addToCart = (book) => {
@@ -57,42 +58,44 @@ const router = useRouter();
   // --------remove from cart -------------
 
   const removeFromCart = (bookId) => {
-    setCartItems((prev) => {
-      const updated = prev.filter((item) => item.id !== bookId);
-      if (updated.length > 0) {
-        localStorage.setItem("catItems", JSON.stringify(updated));
-      } else {
-        localStorage.removeItem("cartItems");
-      }
-      toast.info("Book removed from cart");
-      return updated;
-    });
+    setCartItems((prev) => prev.filter((item) => item.id !== bookId));
+    toast.info("Book removed from cart");
   };
 
   // ---------------login----------------
 
   const login = async (email, password) => {
     try {
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_FETCH_DATA_URL}/user/login`, {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_FETCH_DATA_URL}/user/login`,
+        {
+          email,
+          password,
+        }
+      );
       console.log("Full backend response:", res.data);
-      const token1 = res.data.AccesToken;
+      const token1 = res.data.AccessToken;
       const userData = res.data.userData;
 
       setToken(token1);
       setUser(userData);
+      const role = userData.role;
 
-      localStorage.setItem("token", token1);
-      localStorage.setItem("user", JSON.stringify(userData));
-      console.log(token1);
-      if (token) {
-        router.push("/");
-        console.log("ok**");
+      setCookie(token1, userData);
+      // localStorage.setItem("token", token1);
+      // localStorage.setItem("user", JSON.stringify(userData));
+      if (token1) {
+        if (role === "Admin") {
+          router.push("/admin");
+          toast.success("login admin");
+        } else if (role === "User") {
+          toast.success("login user");
+          router.push("/");
+          console.log("ok**");
+        }
+      } else {
+        return;
       }
-
-      toast("logined successfull!");
     } catch (err) {
       console.log(err, "error is in the login fr", { email, password });
       toast.error("invalid email or password");
@@ -106,13 +109,42 @@ const router = useRouter();
     setUser(null);
     setCartItems([]);
 
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    localStorage.removeItem("cartItems");
+    clearCookie();
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("user");
+    // localStorage.removeItem("cartItems");
 
     toast.success("logout successfully");
   };
 
+  // ------------adding token on register ----------
+
+  const setAuthState = (newToken, newUser) => {
+    setToken(newToken);
+    setUser(newUser);
+    if (newToken && newUser) {
+      setCookie(newToken, newUser);
+      router.push("/");
+    } else {
+      clearCookie();
+    }
+  };
+
+  // -------reuseble function------
+
+  const reusebleFunction = (callback) => {
+    if (!token) {
+      toast.dark("Login to access this");
+
+      router.push("/login");
+      return;
+    }
+    if (user.role === "Admin") {
+      toast.info("Admin can't use this functions");
+      return;
+    }
+    callback();
+  };
   return (
     <>
       <ToastContainer position="top-right" autoClose={3000} theme="colored" />
@@ -125,6 +157,8 @@ const router = useRouter();
           cartItems,
           addToCart,
           removeFromCart,
+          setAuthState,
+          reusebleFunction,
         }}
       >
         {children}

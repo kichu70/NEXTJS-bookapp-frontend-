@@ -1,0 +1,78 @@
+.body-singlebook{
+    background-color: rgb(246, 217, 246);
+
+}
+
+.single-book{
+    padding-bottom: 50px;
+    padding: 30px;
+}
+.singleBook-section1{
+    background: #f5ebeb;
+    border-radius: 20px;
+    margin: 15vh auto 0;
+    padding:50px;
+    max-width: 1200px;
+
+}
+.singleBook-cnt1{
+    /* background: red; */
+}
+.singleBook-cnt2{
+    background:  rgb(241, 231, 243);
+     margin: 20px auto;
+    padding:50px;
+}
+.bookName{
+    color: rgb(121, 13, 175);
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.author{
+    color: rgb(69, 14, 150);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.author span{
+    color: rgb(44, 44, 46);
+    font-size: 30px;
+    font-weight: 600;
+}
+.price{
+    color: green;
+    font-size: 30px;
+    margin: 50px 0 0 0 ;
+}
+
+
+
+
+.btns {
+  display: flex !important;
+  justify-content: space-evenly;
+  margin: 20px auto !important;
+  width: 100%;
+  gap: 10px;
+}
+.dltbtn {
+  width: 100%;
+  color: rgb(240, 230, 230) !important;
+  font-family: cursive !important;
+  box-shadow: rgb(165, 152, 136) 0 0 10px !important ;
+  background-color: rgb(198, 44, 44) !important;
+}
+.dltbtn:hover {
+  transform: scale(0.99);
+}
+.dltbtn:active {
+  background-color: rgb(204, 96, 24) !important;
+  box-shadow: red 0 0 10px !important;
+}
+.editbtn {
+  width: 100%;
+  font-family: cursive !important;
+  box-shadow: rgb(151, 133, 111) 0 0 10px !important ;
+}

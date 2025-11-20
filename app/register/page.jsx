@@ -1,10 +1,13 @@
 "use client"
+
 import { Button, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "../login/login.css";
 import axios from "axios";
 import GradientText from "../../src/components/ui/GradientText";
+import { useAuth } from "../../lib/auth";
+
 
 const page = () => {
   const [name, setName] = useState("");
@@ -13,17 +16,13 @@ const page = () => {
   const [conformpassword, setConformpassword] = useState("");
   const [savedPassword, setSavedPassword] = useState("");
 
-  const [token,setToken] =useState(null)
 
   const [error, setError] = useState(false);
 
+  const {setAuthState} =useAuth()
 
-//   -------------taking token from localstorage--------
 
-useEffect(()=>{
-    const storedToken =localStorage.getItem("token")
-    setToken(storedToken)
-},[])
+
   // --------add user------------------
 
 
@@ -53,11 +52,18 @@ useEffect(()=>{
         const res = await axios.post(`${process.env.NEXT_PUBLIC_FETCH_DATA_URL}/user/add-user`,
             {name,email,password}
         )
-        console.log("added user",res.data);
+        console.log("added user",res.data.AccessToken);
         toast.success("user Created!!");
+        
+        // setTokenState(res.data.AccessToken)
+        // setUserState(res.data.userData)
+
+        setAuthState(res.data.AccessToken,res.data.userData)
+
+
         setConformpassword("");
         setEmail("");
-        setUsername("");
+        setName("");
         setPassword("");
         setSavedPassword("");
       }

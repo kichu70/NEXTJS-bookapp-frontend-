@@ -1,13 +1,13 @@
-.grids0 {
+.grids1 {
   display: grid;
   row-gap: 25px;
   grid-template-columns: repeat(4, 1fr);
-  margin: 50px auto 0;
+  margin: 150px auto 0;
   gap: 15px;
   max-width: 1250px;
   padding: 20px;
 }
-.Card0 {
+.Card1 {
   max-width: 100% !important;
   height: 550px !important;
   /* overflow: hidden; */
@@ -17,13 +17,13 @@
   background: rgb(236, 216, 235) !important;
   box-shadow: rgb(181, 172, 118) 0 0 10px !important;
 }
-.CardMedia0{
+.CardMedia1{
   height: 280px;
 }
-.price0 {
+.price1 {
   margin: 0 0 20px;
 }
-.bookname0 {
+.bookname1 {
   text-transform: capitalize;
   margin-left: 10px;
   font-family: cursive;
@@ -35,7 +35,7 @@
   text-overflow: ellipsis;
   max-width: 300px;
 }
-.discription0 {
+.discription1 {
   max-width: 300px;
     display: -webkit-box;
     
@@ -44,94 +44,55 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.Card0:hover {
+.Card1:hover {
   box-shadow: rgb(181, 172, 118) 0 0 20px !important;
   transition: 0.3s;
   transform: scale(1.05);
 }
 
-.price0 {
+.price1 {
   color: green;
 }
 
-.btns0 {
+.btns1 {
   display: flex !important;
   justify-content: space-evenly;
   margin: 20px auto !important;
   width: 100%;
   gap: 10px;
 }
-.dltbtn0 {
+.dltbtn1 {
   width: 100%;
   color: rgb(240, 230, 230) !important;
   font-family: cursive !important;
   box-shadow: rgb(165, 152, 136) 0 0 10px !important ;
   background-color: rgb(198, 44, 44) !important;
 }
-.dltbtn0:hover {
+.dltbtn1:hover {
   transform: scale(0.99);
 }
-.dltbtn0:active {
+.dltbtn1:active {
   background-color: rgb(204, 96, 24) !important;
   box-shadow: red 0 0 10px !important;
 }
-.editbtn0 {
+.editbtn1 {
   width: 100%;
   font-family: cursive !important;
   box-shadow: rgb(151, 133, 111) 0 0 10px !important ;
 }
 
-.buybtn0 {
+.buybtn1 {
   display: flex;
   justify-content: space-evenly;
   gap: 20px;
 }
-.buynow0 {
+.buynow1 {
   color: rgb(223, 221, 221) !important;
   font-weight: 300 !important;
   background-color: rgb(105, 171, 105) !important;
 }
-.add-to-cart0 {
+.add-to-cart1 {
   background-color: rgb(129, 123, 120) !important;
   color: rgb(223, 221, 221) !important;
   font-weight: 300 !important;
 }
-
-.pages0 {
-  font-size: 16px !important;
-  color: rgb(131, 121, 110);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  border: none;
-  background: none;
-  border-bottom: 2px solid rgb(151, 107, 10);
-  border-radius: 5px;
-}
-.pagination0 {
-  max-width: fit-content;
-  margin:  auto;
-  padding: 50px;
-}
-.pagination0 span {
-  font-family: cursive;
-  color: rgb(71, 63, 52);
-}
-.pages0:hover {
-  border-bottom: 2px solid rgb(242, 60, 19);
-  transform: scale(1.1);
-  color: rgb(223, 194, 25);
-  transition: 0.3s;
-}
-
-
-
-
-.add-rating0{
-  max-width: fit-content;
-  padding: 10px;
-  margin-top: 20px;
-  border-left:rgb(188, 159, 43) solid 2px;
-  border-right:rgb(165, 136, 19) solid 2px;
-  border-radius: 20px;
-}
-/* ------------------------- */
-

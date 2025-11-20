@@ -54,3 +54,8 @@
 }
 
 
+@media (max-width:600px) {
+    .navSection1{
+        display: none;
+    }
+}

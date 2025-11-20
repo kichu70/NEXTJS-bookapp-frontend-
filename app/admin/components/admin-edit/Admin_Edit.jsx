@@ -2,11 +2,11 @@
 
 import { Button, TextField } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
-import "./EditBook.css"
+import "./edit.css"
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
-const EditBook = ({open,book,id,onClose}) => {
+const Admin_Edit = ({open,book,id,onClose}) => {
 const notify3 = () => toast.dark("dataUpdated");
 const editboxRef= useRef()
 const [bookAuthor,setBookAuthor]=useState('')
@@ -26,7 +26,7 @@ useEffect(()=>{
 },[book])
 const UpdateBook = async()=>{
   try{
-    const res =await axios.put(`${process.env.NEXT_PUBLIC_FETCH_DATA_URL}/Books/upadte-book?id=${id}`,
+    const res =await axios.put(`${process.env.NEXT_PUBLIC_FETCH_DATA_URL}/admin/book-update?id=${id}`,
       {
         author:bookAuthor,
         book_name:bookName,
@@ -61,7 +61,7 @@ useEffect(()=>{
 
   return (
      <div className='main-edit' ref={editboxRef}>
-      <Button variant='contained' className='closebtn'onClick={onClose}>X</Button>
+      {/* <Button variant='contained' className='closebtn'onClick={onClose}>X</Button> */}
       <div className="edit">
         <h1>Edit Product</h1>
         <div className="edit-colums">
@@ -108,4 +108,4 @@ useEffect(()=>{
   )
 }
 
-export default EditBook
+export default Admin_Edit

@@ -1,0 +1,84 @@
+body{
+    background:linear-gradient(to right,rgb(242, 178, 236),rgb(239, 237, 238))
+}
+.nav{
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top,rgba(255, 0, 191, 0.637)0%,rgba(234, 203, 232, 0.588)0%,rgb(255, 0, 191));
+    background-color: rgb(185, 74, 177);
+}
+.nav-cnt1{
+    max-width: 650px;
+    margin: auto;
+    /* background-color: blue; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.nav-btn{
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgb(252, 252, 252);
+    /* background-color: rgb(57, 13, 64); */
+    /* border: 2.5px double rgb(215, 47, 215); */
+    padding: 10px ;
+    border-radius: 18px;
+    margin: 50px;
+}
+.nav-btn:hover{
+    border-bottom: 5px solid rgb(126, 20, 131);
+    box-shadow: 0px 0px 50px rgb(208, 0, 255);
+}
+.nav-btn:active{
+    border-bottom: 5px solid rgb(131, 20, 39);
+    box-shadow: 0px 0px 20px rgb(186, 58, 88);
+    color: rgb(213, 203, 203);
+    background-color: rgb(241, 115, 184);
+}
+
+.custom-class{
+    font-size: 5vw !important;
+    font-family: cursive;
+}
+
+/* Button{
+    background-color: rgba(80, 10, 58, 0.956) !important;
+} */
+.btn-mbl{
+    display: none !important;
+}
+@media (max-width:590px) {
+    .custom-class{
+        display: none !important;
+    }
+    .btn-mbl{
+        display: block !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .btn{
+        display: none !important;
+    }
+}
+
+/* --------------------content  divs of that can effect to the nave called pages */
+.admin-view{
+    width: 100%;
+  overflow-x: auto;
+  padding: 20px;
+}
+.view-head h1{
+  font-size: 40px;
+  color: rgb(91, 6, 125);
+  text-shadow: rgb(40, 40, 40) 10 10 15px;
+  padding:0  20px ;
+  font-weight: 600;
+  text-transform: capitalize;
+}

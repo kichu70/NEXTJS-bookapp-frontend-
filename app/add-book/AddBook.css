@@ -37,11 +37,11 @@
     flex-direction: column;
 }
 .addbook-content label{
-    color: rgb(107, 56, 31) !important;
+    color: rgb(61, 5, 62) !important;
     font-size: 22px;
 }
 .addbook-content input{
-    color: rgb(171, 92, 32) !important;
+    color: rgb(61, 5, 62)  !important;
     font-family: cursive;
     font-size: 20px;
     text-transform: capitalize;
@@ -55,10 +55,10 @@
 
 }
 .textEditField .MuiFilledInput-root:after {
-  border-bottom: 2px solid brown;
+  border-bottom: 2px solid rgb(165, 42, 163);
 }
 .addbook-head Button{
-    background-color: brown !important;
+    background-color: rgb(159, 42, 165) !important;
     width: 85%;
 }
 #category-label{
@@ -68,8 +68,8 @@
     height: 50px;
     background: none;
     border: none;
-    border-bottom: 2px brown solid;
-    color: rgb(107, 56, 31) ;
+    border-bottom: 2px rgb(165, 42, 163) solid;
+    color: rgb(61, 5, 62) ;
     font-size: 15px;
     margin: 11px 0 0 0;
 
@@ -78,14 +78,14 @@
   display: block;
   margin: 10px auto;
   padding: 8px;
-  border: 2px solid #9a5440;
+  border: 2px solid #8a409a;
   border-radius: 8px;
   color: #17252a;
   cursor: pointer;
   width: 90%; 
 }
 .addbook-content input[type="file"]::file-selector-button {
-  background-color: #9a5440;
+  background-color: #ad18a1;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -98,7 +98,7 @@
     top: 15px;
     right: 15px;
     box-shadow: -5px 5px 10px rgb(100, 83, 67);
-    background-color: rgb(175, 44, 44) !important;
+    background-color: rgb(159, 42, 165)!important;
     color: white;
     cursor: pointer;
     width: 20px;
@@ -112,7 +112,7 @@
     position: absolute;
     top: -5px;
     right: -5px;
-    background-color: red;
+    background-color: rgb(148, 47, 159);
     color: white;
     border: none;
     border-radius: 50%;

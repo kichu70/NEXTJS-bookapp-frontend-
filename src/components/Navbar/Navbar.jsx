@@ -5,13 +5,14 @@ import GradientText from "../ui/GradientText";
 import SparkleNavbar from "../ui/SparkleNavbar";
 import Link from "next/link";
 import { Button } from "@mui/material";
+import { useAuth } from "@/lib/auth";
 const Navbar = () => {
-  const navRef = useRef(null)
+  const navRef = useRef(null);
+  const { logout, token ,user } = useAuth();
+
   return (
     <div>
-      
-      <div className="navbar">
-        
+        <div className="navbar">
         <GradientText
           colors={[
             "#c619ccff",
@@ -23,18 +24,49 @@ const Navbar = () => {
           animationSpeed={3}
           showBorder={false}
           className="custom-class"
-        >   
+        >
           Book App
         </GradientText>
         {/* <h1 className="navHead" >Book app</h1> */}
         <div className="navSection1" ref={navRef}>
-          <Link href={"/"}><button variant="contained">home</button></Link>
-          <Link href={"/view-book"}><button variant="contained">All book</button></Link>
-          <Link href={"/add-book"}><button variant="contained">addbook</button></Link>
-          <Link href={"/add-cart"}><button variant="contained">cart</button></Link>
-          <Link href={"/login"}><button variant="contained">login</button></Link>
+          <Link href={"/"}>
+            <button variant="contained">home</button>
+          </Link>
+          <Link href={"/view-book"}>
+            <button variant="contained">All book</button>
+          </Link>
+          {user?.role ==="Admin"&&(
+            <Link href={"/admin"}>
+            <button variant="contained">Admin page</button>
+          </Link>
+          )}
+      {user?.role==="User"&&(
+        <>
+          <Link href={"/add-book"}>
+            <button variant="contained">addbook</button>
+          </Link>
+          <Link href={"/add-cart"}>
+            <button variant="contained">cart</button>
+          </Link>
+          </>
+        )}
+          {token ? (
+            <Link href={"/login"}>
+              <button variant="contained" onClick={logout}>
+                logout
+              </button>
+            </Link>
+          ) : (
+            <Link href={"/login"}>
+              <button variant="contained">login</button>
+            </Link>
+          )}
+
+
         </div>
+        
       </div>
+
     </div>
   );
 };

@@ -7,6 +7,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import GradientText from '../../src/components/ui/GradientText';
 import { useRouter } from "next/navigation";
+import { useAuth } from "../../lib/auth";
 
 
 const AddBook = () => {
@@ -19,13 +20,10 @@ const AddBook = () => {
   const [loading, setLoading] = useState(false);
   const [imagePreview, setImagePreview] = useState([]);
   const [error, setError] = useState(false);
-  const [token,setToken]=useState(null)
   const router = useRouter();
+  const{token}=useAuth()
 
-  useEffect(()=>{
-    const storedToken =localStorage.getItem("token")
-    setToken(storedToken)
-  },[])
+
   const addBook = async (req, res) => {
     if (
       !book_name ||
