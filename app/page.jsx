@@ -9,7 +9,6 @@ import oldbook from "../public/homeImages/oldbook.png";
 import newbook from "../public/homeImages/newBook.png";
 import ViewBooks from "../src/components/viewAllBooks/ViewBooks";
 import GradientText from "@/src/components/ui/GradientText";
-import LightRays from "../components/LightRays"
 const page = () => {
   
   //   const [fixed, setFixed] = useState(false);

@@ -2,9 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import GradientText from "../ui/GradientText";
-import SparkleNavbar from "../ui/SparkleNavbar";
 import Link from "next/link";
-import { Button } from "@mui/material";
 import { useAuth } from "@/lib/auth";
 const Navbar = () => {
   const navRef = useRef(null);
