@@ -18,7 +18,7 @@ import EditBook from "../edit/EditBook";
 import { useAuth } from "../../../lib/auth";
 import { useRouter } from "next/navigation";
 import { handlePayment } from "../payment/paymentButton";
-
+import Footer from "../Footer/Footer"
 const ViewAllBooks = () => {
   const { addToCart, user, token, reusebleFunction } = useAuth();
 
@@ -271,6 +271,7 @@ const ViewAllBooks = () => {
           Next
         </button>
       </div>
+      <Footer/>
     </div>
   );
 };

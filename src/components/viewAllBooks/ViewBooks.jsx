@@ -19,6 +19,8 @@ import { useAuth } from "../../../lib/auth";
 import CategoryOfBooks from "../bookCategorys/CategoryOfBooks";
 import { useRouter } from "next/navigation";
 import { handlePayment } from "../payment/paymentButton";
+import Footer from "../Footer/Footer"
+
 const ViewAllBooks = () => {
   const { addToCart, token, user ,reusebleFunction} = useAuth();
 
@@ -261,6 +263,7 @@ const ViewAllBooks = () => {
           />
         )}
       </div>
+      <Footer/>
     </div>
   );
 };
